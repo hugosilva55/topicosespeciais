@@ -13,14 +13,13 @@ public class Aluno implements Serializable{
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private Integer nome;
-	private Integer cpf;
-	private Integer rg;
+	private String nome;
+	private String cpf;
+	private String rg;
 	private Integer matricula;
 	
 	
-	
-	public Aluno(Integer id, Integer nome, Integer cpf, Integer rg, Integer matricula) {
+	public Aluno(Integer id, String nome, String cpf, String rg, Integer matricula) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -30,12 +29,36 @@ public class Aluno implements Serializable{
 	}
 	
 	
+
+	public Aluno() {
+		super();
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Aluno [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", matricula=" + matricula + "]";
 	}
 	
 
+	
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((rg == null) ? 0 : rg.hashCode());
+		return result;
+	}
+	
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -46,32 +69,32 @@ public class Aluno implements Serializable{
 	}
 
 
-	public Integer getNome() {
+	public String getNome() {
 		return nome;
 	}
 
 
-	public void setNome(Integer nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
 
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
 
-	public Integer getRg() {
+	public String getRg() {
 		return rg;
 	}
 
 
-	public void setRg(Integer rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 
@@ -86,17 +109,11 @@ public class Aluno implements Serializable{
 	}
 
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + ((rg == null) ? 0 : rg.hashCode());
-		return result;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
