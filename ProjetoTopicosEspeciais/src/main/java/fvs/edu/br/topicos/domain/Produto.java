@@ -15,7 +15,7 @@ import javax.persistence.ManyToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Produto implements Serializable {
+public class Produto implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -23,14 +23,17 @@ public class Produto implements Serializable {
 	private Integer id;
 	private String nome;
 	private Double preco;
-
+	
+	
 	@JsonIgnore
 	@ManyToMany
-	@JoinTable(name = "PRODUTO_CATEGORIA", joinColumns = @JoinColumn(name = "produto_id"), inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+	@JoinTable(name = "PRODUTO_CATEGORIA", 
+	joinColumns = @JoinColumn(name = "produto_id"),
+	inverseJoinColumns = @JoinColumn(name = "categoria_id"))
 	List<Categoria> categorias = new ArrayList<>();
-
+	
 	public Produto() {
-
+		
 	}
 
 	public Produto(Integer id, String nome, Double preco) {
@@ -96,5 +99,7 @@ public class Produto implements Serializable {
 			return false;
 		return true;
 	}
-
+	
+	
+	
 }

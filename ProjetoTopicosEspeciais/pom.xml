@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 
 	<name>ProjetoTopicosEspeciais</name>
-	<description>Projeto desenvolvido na disciplina de tópicos especiais - HugoS</description>
+	<description>Projeto desenvolvido na disciplina de topicos especiais fvs</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -52,6 +52,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+
 
 	</dependencies>
 
