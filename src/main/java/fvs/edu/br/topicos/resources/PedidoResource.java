@@ -12,7 +12,7 @@ import fvs.edu.br.topicos.services.PedidoService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @RestController
-@RequestMapping(value = "/Pedidos")
+@RequestMapping(value = "/pedidos")
 public class PedidoResource {
 
 	@Autowired
